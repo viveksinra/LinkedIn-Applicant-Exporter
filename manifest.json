@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Applicant Exporter",
+  "version": "1.0",
+  "description": "Scrapes applicant data from LinkedIn job postings and exports it to an Excel file.",
+  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/hiring/jobs/*"],
+      "js": ["content.js"]
+    }
+  ]
+} 
